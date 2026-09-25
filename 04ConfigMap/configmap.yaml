@@ -1,0 +1,13 @@
+```yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+  namespace: config-demo
+
+data:
+  APP_NAME: "demo-app"
+  APP_ENV: "dev"
+  APP_MESSAGE: "Hello from Kubernetes ConfigMap"
+  APP_VERSION: "1.0"
+```
