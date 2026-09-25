@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: config-demo
+  namespace: config-demo
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: config-demo
+
+  template:
+    metadata:
+      labels:
+        app: config-demo
+
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:latest
+
+          envFrom:
+            - configMapRef:
+                name: app-config
